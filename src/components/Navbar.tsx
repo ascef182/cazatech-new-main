@@ -4,24 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Home, Zap, Share2, Globe, Book, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const navItems = [
-    { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
-    {
-      href: "/automacoes",
-      label: "Automação",
-      icon: <Zap className="h-5 w-5" />,
-    },
-    {
-      href: "/social-media",
-      label: "Social Media",
-      icon: <Share2 className="h-5 w-5" />,
-    },
-    { href: "/works", label: "Sites", icon: <Globe className="h-5 w-5" /> },
-    { href: "/blog", label: "Blog", icon: <Book className="h-5 w-5" /> },
-    { href: "/contact", label: "Contato", icon: <Mail className="h-5 w-5" /> }, // Corrigido de '/contact' para '/contato'
+    { href: "/", label: "Home" },
+    { href: "/automacoes", label: "Automação" },
+    { href: "/social-media", label: "Social Media" },
+    { href: "/works", label: "Sites" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contato" },
   ];
 
   return (
@@ -71,9 +63,6 @@ export default function Navbar() {
                     hover:bg-gray-100 dark:hover:bg-gray-800"
                   aria-label={`Ir para ${item.label}`}
                 >
-                  <span className="mr-2" aria-hidden="true">
-                    {item.icon}
-                  </span>
                   {item.label}
                 </Link>
               </motion.div>
@@ -137,9 +126,6 @@ export default function Navbar() {
                               hover:bg-gray-100 dark:hover:bg-gray-800"
                             aria-label={`Ir para ${item.label}`}
                           >
-                            <span className="mr-3" aria-hidden="true">
-                              {item.icon}
-                            </span>
                             {item.label}
                           </Link>
                         </SheetTrigger>
